@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://support.bitunix.com/hc/theming_assets/01HZM57E1CK7E4CX9CH5H4ZR5J" alt="Bitunix Logo" width="200"/>
+  <img src="assets/logo.png" alt="Bitunix Logo" width="200"/>
 </p>
 
 <h1 align="center">Bitunix - A Comprehensive Trading API Wrapper</h1>
