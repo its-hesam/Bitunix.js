@@ -4,7 +4,8 @@
 
 <h1 align="center">Bitunix - A Trading API Wrapper for Bitunix Exchange<h1>
 
-**Bitunix** is an NPM package designed to simplify interactions with trading APIs. This package provides a high-level abstraction for managing accounts, positions, orders, and risk parameters while ensuring data validation and signature generation for secure API communication.
+**Bitunix** is an NPM package exclusively designed to simplify and enhance interactions with the Bitunix exchange API. This package provides a high-level abstraction for managing accounts, positions, orders, and risk parameters while ensuring data validation and signature generation for secure and reliable API communication.
+
 
 ---
 
