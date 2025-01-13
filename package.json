@@ -1,7 +1,7 @@
 {
   "name": "bitunix",
   "version": "1.0.2",
-  "description": "A Node.js library for interacting with the Bitunix API for trading.",
+  "description": "A Node.js library for interacting with the Bitunix Exchange API for trading.",
   "main": "src/index.js",
   "scripts": {
     "start": "node example/test.js",
