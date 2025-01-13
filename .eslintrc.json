@@ -1,0 +1,45 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "new-cap": "off",
+    "no-useless-constructor": "off",
+    "semi": ["error", "always"],
+    "curly": ["error", "multi-or-nest"],
+    "brace-style": ["error", "allman"],
+    "func-call-spacing": "off",
+    "operator-linebreak": "off",
+    "no-unused-vars": "off",
+    "indent":
+    [
+      "error", 4,
+      {
+        "SwitchCase": 1,
+        "VariableDeclarator": 1,
+        "ignoredNodes":
+        [
+          "PropertyDefinition[decorators]",
+          "TSUnionType",
+          "FunctionExpression[params]:has(Identifier[decorators])"
+        ]
+      }
+    ],
+    "template-curly-spacing": ["error", "always"],
+    "space-before-function-paren": ["error", "never"],
+    "no-unexpected-multiline": "off",
+    "quotes":
+    [
+      2, "single",
+      {
+        "avoidEscape": true
+      }
+    ]
+  }
+}
