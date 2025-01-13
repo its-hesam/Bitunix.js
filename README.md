@@ -223,10 +223,9 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ## Author
 
-**Your Name**  
-Email: [your.email@example.com](mailto:your.email@example.com)  
-GitHub: [your-github-profile](https://github.com/your-github-profile)  
-Twitter: [your-twitter-handle](https://twitter.com/your-twitter-handle)
+**Hesam**  
+Email: [Contact@Hesam-gh.site](mailto:Contact@Hesam-gh.site)  
+GitHub: [its-hesam](https://github.com/its-hesam)  
 
 ---
 
