@@ -1,0 +1,16 @@
+{
+    "base_url": "https://api.bitunix.com",
+    "endpoints": {
+      "getAccount": "/api/v1/futures/account",
+      "getPositionHistory": "/api/v1/futures/position/get_history_positions",
+      "getPositions": "/api/v1/futures/position/get_pending_positions",
+      "setLevrage": "/api/v1/futures/account/change_leverage",
+      "setMarginMode": "/api/v1/futures/account/change_margin_mode",
+      "setPositionMode": "/api/v1/futures/account/change_position_mode",
+      "openTakeProfit": "/api/v1/futures/tpsl/place_order",
+      "openStopLoss": "/api/v1/futures/tpsl/place_order",
+      "getMarketPrice": "/api/v1/futures/market/depth",
+      "placeOrder": "/api/v1/futures/trade/place_order"
+    }
+  }
+  
