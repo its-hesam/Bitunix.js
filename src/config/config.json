@@ -1,5 +1,5 @@
 {
-    "base_url": "https://api.bitunix.com",
+    "base_url": "https://fapi.bitunix.com",
     "endpoints": {
       "getAccount": "/api/v1/futures/account",
       "getPositionHistory": "/api/v1/futures/position/get_history_positions",
@@ -12,5 +12,5 @@
       "getMarketPrice": "/api/v1/futures/market/depth",
       "placeOrder": "/api/v1/futures/trade/place_order"
     }
-  }
+}
   

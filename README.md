@@ -33,18 +33,19 @@ npm install bitunix
 The package requires a configuration file for endpoints and base URL. Update `src/config/config.json` with your API details:
 ```json
 {
-  "baseUrl": "https://api.example.com",
-  "endpoints": {
-    "getAccount": "/v1/account",
-    "getPositions": "/v1/positions",
-    "getPositionHistory": "/v1/positions/history",
-    "setLevrage": "/v1/leverage",
-    "setMarginMode": "/v1/margin/mode",
-    "setPositionMode": "/v1/position/mode",
-    "takeProfit": "/v1/orders/take-profit",
-    "openStopLoss": "/v1/orders/stop-loss",
-    "placeOrder": "/v1/orders"
-  }
+    "base_url": "https://fapi.bitunix.com",
+    "endpoints": {
+      "getAccount": "/api/v1/futures/account",
+      "getPositionHistory": "/api/v1/futures/position/get_history_positions",
+      "getPositions": "/api/v1/futures/position/get_pending_positions",
+      "setLevrage": "/api/v1/futures/account/change_leverage",
+      "setMarginMode": "/api/v1/futures/account/change_margin_mode",
+      "setPositionMode": "/api/v1/futures/account/change_position_mode",
+      "openTakeProfit": "/api/v1/futures/tpsl/place_order",
+      "openStopLoss": "/api/v1/futures/tpsl/place_order",
+      "getMarketPrice": "/api/v1/futures/market/depth",
+      "placeOrder": "/api/v1/futures/trade/place_order"
+    }
 }
 ```
 
