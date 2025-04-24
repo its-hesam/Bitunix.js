@@ -22,7 +22,7 @@ class Bitunix
         validateApiCredentials(apiKey, apiSecret);
         this.apiKey = apiKey;
         this.apiSecret = apiSecret;
-        this.baseUrl = config.baseUrl;
+        this.baseUrl = config.base_url;
         this.api = axios.create({
             baseURL: this.baseUrl,
             headers:
