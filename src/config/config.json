@@ -10,7 +10,12 @@
       "openTakeProfit": "/api/v1/futures/tpsl/place_order",
       "openStopLoss": "/api/v1/futures/tpsl/place_order",
       "getMarketPrice": "/api/v1/futures/market/depth",
-      "placeOrder": "/api/v1/futures/trade/place_order"
+      "placeOrder": "/api/v1/futures/trade/place_order",
+      "getDepth" : "/api/v1/futures/market/depth",
+      "getKline": "/api/v1/futures/market/kline",
+      "getPairs": "/api/v1/futures/market/trading_pairs",
+      "getTicker": "/api/v1/futures/market/tickers",
+      "getFundingRate": "/api/v1/futures/market/funding_rate"
     }
 }
   

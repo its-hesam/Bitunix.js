@@ -36,27 +36,32 @@ function validatePositionMode(mode)
         throw new Error(`Invalid position mode: ${ mode }. Valid modes are: ${ validModes.join(', ') }`);
 }
 
-// اعتبارسنجی مقدار Leverage
 function validateLeverage(leverage) 
 {
     if (typeof leverage !== 'number' || leverage <= 0 || leverage > 100) 
         throw new Error(`Invalid leverage: ${ leverage }. Leverage must be a number between 1 and 100.`);
 }
 
-// اعتبارسنجی مقدار Margin
+
 function validateMargin(margin) 
 {
     if (typeof margin !== 'number' || margin <= 0) 
         throw new Error(`Invalid margin: ${ margin }. Margin must be a positive number.`);
 }
 
-// اعتبارسنجی مقدار Symbol
+
 function validateSymbol(symbol) 
 {
     if (typeof symbol !== 'string' || !/^[A-Z]{2,10}$/.test(symbol)) 
         throw new Error(`Invalid symbol: ${ symbol }. Symbol must be an uppercase string (e.g., BTC, ETH).`);
 }
 
+function validateInterval(interval)
+{
+    const validIntervals = ['1m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '8h', '12h', '1d', '3d', '1w'];
+    if (!validIntervals.includes(interval)) 
+        throw new Error(`Invalid interval: ${ interval }. Valid intervals are: ${ validIntervals.join(', ') }`);
+}
 
 function validatePayload(payload) 
 {
@@ -86,4 +91,5 @@ module.exports = {
     validateMargin,
     validateSymbol,
     validatePayload,
+    validateInterval
 };

@@ -9,6 +9,7 @@ const {
     validateMargin,
     validateSymbol,
     validatePayload,
+    validateInterval,
 } = require('./utils/validate');
 const { generateSignature , generateNonce } = require('./utils/signature');
 const  delay  = require('./utils/delay');
@@ -67,6 +68,7 @@ class Bitunix
     {
         try 
         {
+            validateSymbol(symbol);
             const endpoint = `${ config.endpoints.getPositions }`;
             const queryParams = {};
             const nonce = generateNonce();
@@ -110,6 +112,7 @@ class Bitunix
     {
         try 
         {
+            validateSymbol(symbol);
             const endpoint = `${ config.endpoints.getPositionHistory }`;
             const queryParams = {};
             const nonce = generateNonce();
@@ -414,7 +417,161 @@ class Bitunix
             throw new Error(`Failed to Place Order: ${ error.message }`);
         }
     }
+     
+    async get_depth(symbol, limit)
+    {
+        try 
+        {
+            validateSymbol(symbol);
+            const endpoint = `${ config.endpoints.getDepth }`;
+            const queryParams = {
+                symbol: `${ symbol }USDT`,
+                limit: limit
+            };
+            const nonce = generateNonce();
+            const timestamp = new Date().getTime().toString();
+            const sign = generateSignature(nonce, timestamp, queryParams,'', this.apiKey, this.apiSecret);
 
+
+            const response = await this.api.get(endpoint, {
+                params: queryParams,
+                headers: {
+                    'sign': sign,
+                    'timestamp': timestamp,
+                    'nonce': nonce,
+                },
+            });
+    
+            return response.data;
+        } 
+        catch (error) 
+        {
+            throw new Error(`Failed to fetch balance: ${ error.message }`);
+        }
+    }
+
+    async get_kline(symbol, interval, limit = 1000)
+    {
+        try 
+        {
+            validateSymbol(symbol);
+            validateInterval(interval);
+            const endpoint = `${ config.endpoints.getKline }`;
+            const queryParams = {
+                symbol: `${ symbol }USDT`,
+                limit: limit,
+                interval: interval
+            };
+            const nonce = generateNonce();
+            const timestamp = new Date().getTime().toString();
+            const sign = generateSignature(nonce, timestamp, queryParams,'', this.apiKey, this.apiSecret);
+
+
+            const response = await this.api.get(endpoint, {
+                params: queryParams,
+                headers: {
+                    'sign': sign,
+                    'timestamp': timestamp,
+                    'nonce': nonce,
+                },
+            });
+    
+            return response.data;
+        } 
+        catch (error) 
+        {
+            throw new Error(`Failed to fetch balance: ${ error.message }`);
+        }
+    }
+
+    async get_pairs()
+    {
+        try 
+        {
+            const endpoint = `${ config.endpoints.getPairs }`;
+            const queryParams = {};
+            const nonce = generateNonce();
+            const timestamp = new Date().getTime().toString();
+            const sign = generateSignature(nonce, timestamp, queryParams,'', this.apiKey, this.apiSecret);
+
+
+            const response = await this.api.get(endpoint, {
+                params: queryParams,
+                headers: {
+                    'sign': sign,
+                    'timestamp': timestamp,
+                    'nonce': nonce,
+                },
+            });
+    
+            return response.data;
+        } 
+        catch (error) 
+        {
+            throw new Error(`Failed to fetch balance: ${ error.message }`);
+        }
+    }
+
+    async get_ticker(symbol)
+    {
+        try 
+        {
+            const endpoint = `${ config.endpoints.getTicker }`;
+            const queryParams = {
+                symbol: `${ symbol }USDT`,
+            };
+            const nonce = generateNonce();
+            const timestamp = new Date().getTime().toString();
+            const sign = generateSignature(nonce, timestamp, queryParams,'', this.apiKey, this.apiSecret);
+
+
+            const response = await this.api.get(endpoint, {
+                params: queryParams,
+                headers: {
+                    'sign': sign,
+                    'timestamp': timestamp,
+                    'nonce': nonce,
+                },
+            });
+    
+            return response.data;
+        } 
+        catch (error) 
+        {
+            throw new Error(`Failed to fetch balance: ${ error.message }`);
+        }
+    }
+
+    async get_funding_rate(symbol)
+    {
+        try 
+        {
+            validateSymbol(symbol);
+            const endpoint = `${ config.endpoints.getFundingRate }`;
+            const queryParams = {
+                symbol: `${ symbol }USDT`,
+            };
+            const nonce = generateNonce();
+            const timestamp = new Date().getTime().toString();
+            const sign = generateSignature(nonce, timestamp, queryParams,'', this.apiKey, this.apiSecret);
+
+
+            const response = await this.api.get(endpoint, {
+                params: queryParams,
+                headers: {
+                    'sign': sign,
+                    'timestamp': timestamp,
+                    'nonce': nonce,
+                },
+            });
+    
+            return response.data;
+        } 
+        catch (error) 
+        {
+            throw new Error(`Failed to fetch balance: ${ error.message }`);
+        }
+    }
 }
 
 module.exports = Bitunix;
